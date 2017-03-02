@@ -4,6 +4,7 @@ import { NavController } from 'ionic-angular';
 import { FournisseurPage } from '../fournisseur/fournisseur';
 import {  ProduitPage} from '../produit/produit';
 import { TableauPage } from '../tableau/tableau';
+import { LoginPage } from '../login/login';
 
 @Component({
   selector: 'page-home',
@@ -29,6 +30,10 @@ export class HomePage {
   Opentableau()
   {
      this.navCtrl.setRoot(TableauPage);
+  }
+  Logout()
+  {
+    this.navCtrl.setRoot(LoginPage);
   }
 
 }
