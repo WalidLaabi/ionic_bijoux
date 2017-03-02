@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
+import {Http} from "@angular/http";
+import 'rxjs/add/operator/map';
+
 /*
   Generated class for the Fournisseur page.
 
@@ -12,10 +15,22 @@ import { HomePage } from '../home/home';
   templateUrl: 'fournisseur.html'
 })
 export class FournisseurPage {
+  posts : any;
+  constructor(public navCtrl: NavController, public navParams: NavParams,public http :Http) 
+  {
+    this.posts = null;
+    this.http.get("http://ionicpfa.000webhostapp.com/users.php")
+    .map(res => res.json())
+    .subscribe(data=>{
+      this.posts = data.User;
+      console.log(this.posts);
+    },error=>
+    {console.log(error);} );
+    
+  }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
-
-  ionViewDidLoad() {
+  ionViewDidLoad() 
+  {
     console.log('ionViewDidLoad FournisseurPage');
   }
 
