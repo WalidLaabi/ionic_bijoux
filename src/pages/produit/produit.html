@@ -7,18 +7,28 @@
 <ion-header>
 
 
- <ion-navbar color="primary">
-      <ion-buttons >
+    <ion-navbar color="primary">
+        <ion-buttons>
             <button ion-button icon-left (click)="Back()">
        <ion-icon name="arrow-back"></ion-icon>
        </button>
         </ion-buttons>
-   
-  </ion-navbar>
+
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+    <ion-searchbar></ion-searchbar>
+    <ion-list>
+        <ion-item *ngFor="let post of posts">
+            <h2>{{post.nomproduit | uppercase }}</h2>
+            <h2>quantite : {{post.quantite}}</h2>
+            <h2>prix : {{post.prixunitaire}}</h2>
+            <h3>Date Achat : {{post.dateachat}}</h3>
+        </ion-item>
+    </ion-list>
 
 </ion-content>

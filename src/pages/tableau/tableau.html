@@ -7,18 +7,31 @@
 <ion-header>
 
 
- <ion-navbar color="primary">
-      <ion-buttons >
+    <ion-navbar color="primary">
+        <ion-buttons>
             <button ion-button icon-left (click)="Back()">
        <ion-icon name="arrow-back"></ion-icon>
        </button>
         </ion-buttons>
-   
-  </ion-navbar>
+
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+    <ion-item>
+        <ion-label>Date debut</ion-label>
+        <ion-datetime displayFormat="MMM-DD-YYYY" [(ngModel)]="myDate"></ion-datetime>
+    </ion-item>
+    <ion-item>
+        <ion-label>Date fin</ion-label>
+        <ion-datetime displayFormat="MMM-DD-YYYY" [(ngModel)]="myDate2"></ion-datetime>
+    </ion-item>
 
+    <ion-item>
+        <ion-label fixed>Total d'achat </ion-label>
+        <ion-input type="text" value=""></ion-input>
+
+    </ion-item>
 </ion-content>

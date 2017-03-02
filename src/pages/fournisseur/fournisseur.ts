@@ -19,13 +19,13 @@ export class FournisseurPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,public http :Http) 
   {
     this.posts = null;
-    this.http.get("http://ionicpfa.000webhostapp.com/users.php")
+    this.http.get("http://ionicpfa.000webhostapp.com/fournisseur.php")
     .map(res => res.json())
     .subscribe(data=>{
-      this.posts = data.User;
+      this.posts = data.Fournisseur;
       console.log(this.posts);
     },error=>
-    {console.log(error);} );
+    {console.log(error);} )
     
   }
 
